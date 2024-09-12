@@ -1,0 +1,120 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+}
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+input, button, textarea, select {
+    font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+#root, #__next {
+    isolation: isolate;
+}
+/* end css reset */
+
+:root {
+    --primary: hsl(0, 0%, 100%);
+    --secondary: hsl(75, 94%, 57%);
+    
+    --button: hsl(0, 0%, 20%);
+    --backgroundCard: hsl(0, 0%, 12%);
+    --background: hsl(0, 0%, 8%);
+
+    --font: "Inter", sans-serif;
+}
+
+body {
+    font-size: .875rem;
+    font-family: var(--font);
+    color: var(--primary);
+    background-color: var(--background);
+}
+
+/* Main */
+.wrapper {
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+}
+/* Main-Card */
+.card {
+    max-width: 24rem;
+    background-color: var(--backgroundCard);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-radius: .8rem;
+    padding: 2rem 2rem;
+}
+.card-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 .5rem;
+}
+@media (min-width: 400px) {
+    .card-description {
+        margin: 0 1.5rem;
+    }
+}
+.card-description__image {
+    height: 90px;
+    width: 90px;
+    border-radius: 5rem;
+    margin-bottom: 1.5rem;
+}
+.card-description__name {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.card-description__country {
+    color: var(--secondary);
+    font-weight: 600;
+    margin-top: .3rem;
+}
+.card-description__skills {
+    font-size: 14px;
+    font-weight: 400;
+    color: hsl(0, 0%, 85%);
+    margin-top: 1.5rem;
+}
+
+.card-social-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.btn {
+    flex: 1;
+    width: 100%;
+    background-color: var(--button);
+    color: var(--primary);
+    font-weight: 600;
+    border-radius: .5rem;
+    border: none;
+    padding: .8rem;
+    transition: ease .3s;
+}
+.btn:hover {
+    cursor: pointer;
+    background-color: var(--secondary);
+    color: var(--button);
+    transition: ease .3s;
+}
